@@ -1,0 +1,28 @@
+
+<% if (page.comments){ %>
+<section id="comment">
+  <% if (theme.comment == "facebook") {
+      if (theme.facebook) { %>
+      <%- partial('_partial/facebook_comment', {fbConfig: theme.facebook}) %>
+      <% } %>
+  <% } else if(config.disqus_shortname) { %>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  <% } else if(theme.comment == "gentie") { %>
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+	<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+	<script>
+	var cloudTieConfig = {
+	  url: document.location.href, 
+	  sourceId: "<%= theme.gentie.sourceId %>",
+	  productKey: "<%= theme.gentie.productKey %>",
+	  target: "cloud-tie-wrapper"
+	};
+	var yunManualLoad = true;
+	Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+	</script>
+  <% } %>
+ 
+</section>
+<% } %>
