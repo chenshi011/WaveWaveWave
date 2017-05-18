@@ -1,7 +1,7 @@
 
 # WaveWaveWave
 
-Air theme for [Hexo] based on [light] theme.
+Air theme for [Hexo](https://hexo.io/) based on [light](https://github.com/hexojs/hexo-theme-light) theme.
 
 ## Demo
 
